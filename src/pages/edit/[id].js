@@ -7,12 +7,12 @@ function EditBlog({ blogPost }) {
   // State to hold the retrieved blog post data
   const [post, setPost] = useState(blogPost);
 
-  //   useEffect(() => {
-  //     // Fetch the blog post details by ID when the component mounts
-  //     fetchBlogPostById(post.id)
-  //       .then((response) => setPost(response.data))
-  //       .catch((error) => console.error("Error fetching blog post:", error));
-  //   }, [post.id]);
+  useEffect(() => {
+    // Fetch the blog post details by ID when the component mounts
+    fetchBlogPostById(post.id)
+      .then((response) => setPost(response.data))
+      .catch((error) => console.error("Error fetching blog post:", error));
+  }, [post.id]);
 
   return (
     <Layout>
